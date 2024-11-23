@@ -1,0 +1,573 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 50px; /* Menos padding para telas menores */
+  }
+}
+
+/* Cabeçalho */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.search-bar {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.header-right .accessibility-btn, .menu-list li a {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.header-right .accessibility-btn {
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.header-right .accessibility-btn:hover {
+  background: #444;
+}
+
+/* Menu */
+.menu {
+  margin-top: 70px; /* Ajuste para descer o menu devido ao header fixo */
+  background: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.menu-list li a:hover {
+  color: #444;
+}
+
+/* Linha Divisória Fora do Flexbox */
+.divider {
+  width: 80%; /* Largura da linha divisória */
+  margin: 2rem auto; /* Centralizada horizontalmente */
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+/* Seção Sobre */
+.sobre-section {
+  padding: 2rem 1rem;
+}
+
+/* Ajuste do alinhamento da imagem na seção "Sobre" */
+.sobre-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  max-width: 100%;
+  padding: 0 8%;
+}
+
+.sobre-text {
+  flex: 1;
+  text-align: left;
+}
+
+.sobre-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.sobre-text h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.sobre-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.ver-mais-link {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  border: 1px solid #000;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.ver-mais-link:hover {
+  background: #000;
+  color: #fff;
+}
+
+.sobre-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-right: -2%;
+}
+
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sobre-text {
+    text-align: center;
+  }
+
+  .sobre-image {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .search-bar {
+    max-width: 250px;
+  }
+
+  .menu-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .menu-list li a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre-img {
+    width: 80%;
+  }
+}
+
+/* Modo Claro */
+.light-mode {
+  background-color: white; /* Cor de fundo para modo claro */
+  color: black; /* Cor de texto padrão para modo claro */
+}
+
+.light-mode .header {
+  background-color: #000;
+  color: #fff;
+}
+
+.light-mode .accessibility-btn {
+  background-color: #ddd;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.light-mode .accessibility-btn:hover {
+  background-color: #bbb;
+}
+
+.light-mode .menu {
+  background-color: #fff;  /* Cor de fundo do menu no modo claro */
+}
+
+.light-mode .menu-list li a {
+  color: #000;  /* Cor do texto no menu claro */
+}
+
+.light-mode .menu-list li a:hover {
+  color: #444;
+}
+
+/* Defina o modo escuro e o claro na raiz */
+.dark-mode {
+  background-color: #121212; /* Cor de fundo para modo escuro */
+  color: white; /* Cor de texto padrão para modo escuro */
+}
+.dark-mode .header {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .accessibility-btn {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.dark-mode .accessibility-btn:hover {
+  background-color: #666;
+}
+
+.dark-mode .menu {
+  background-color: #333;  /* Cor de fundo do menu no modo escuro */
+}
+
+.dark-mode .menu-list li a {
+  color: #fff;  /* Cor do texto no menu escuro */
+}
+
+.dark-mode .menu-list li a:hover {
+  color: #bbb;
+}
+
+.dark-mode .ver-mais-link {
+  color: #5a5a5a;
+  border: 1px solid #fff;
+}
+
+.dark-mode .ver-mais-link:hover {
+  background: #fdfdfd;
+}
+
+
+/* Garantir que o texto das seções Serviços e Projetos seja preto no modo escuro */
+.dark-mode .servico-descricao,
+.dark-mode .projeto-info p {
+  color: black; /* Cor preta para o texto */
+}
+/* Títulos da seção Serviços e Projetos no modo escuro */
+.dark-mode .servicos-titulo,
+.dark-mode .projetos-titulo,
+.dark-mode h2 {
+  color: rgb(255, 255, 255); /* Cor branca para os títulos no modo escuro */
+}
+
+.dark-mode .servicos-titulo,
+.dark-mode h3 {
+  color: rgb(0, 0, 0); /* Cor branca para os títulos no modo escuro */
+}
+
+/* Seção de Serviços */
+.servicos-section {
+  padding: 2rem 1rem;
+}
+
+.servicos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.servico-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 45%; /* Para garantir que dois cards caibam lado a lado *//* Ajuste para dar um espaço entre os cards nas telas grandes */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.servico-card:hover {
+  transform: translateY(-5px);
+}
+
+.servico-icon {
+  font-size: 3rem;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.servico-icon img {
+  max-width: 50px; /* Controlando a largura da imagem */
+  max-height: 50px; /* Certificando-se que a altura também não ultrapasse 50px */
+  margin-bottom: 1rem;
+}
+
+.servico-titulo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.servico-descricao {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .servico-card {
+    width: 100%; /* Para telas menores, os cards ficam em uma coluna */
+  }
+}
+
+/* Seção Projetos */
+.projetos-section {
+  padding: 2rem 1rem;
+}
+
+/* Alinhando o título exatamente onde a linha divisória começa */
+.projetos-titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  width: 80%; /* Largura igual à linha divisória */
+  margin: 0 auto 2rem auto; /* Centralizado horizontalmente */
+  text-align: left;
+}
+
+.projetos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espaçamento entre os cards */
+  justify-content: space-between;
+}
+
+.projeto-card-wrapper {
+  display: flex;
+  flex-direction: column; /* Mantém o card e título em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  flex: 1; /* Permite que os cards se ajustem ao espaço disponível */
+  max-width: 30%; /* Limita a largura para garantir o alinhamento */
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .projetos-container {
+    flex-direction: column; /* Para telas menores, os cards empilham */
+    align-items: center;
+  }
+
+  .projeto-card-wrapper {
+    width: 100%; /* Cards ocupam 100% da largura em telas pequenas */
+    margin-bottom: 2rem; /* Espaçamento entre os cards */
+  }
+}
+
+/* Estilo dos Cards */
+.projeto-card {
+  width: calc(33% - 20px); /* Faz com que cada card ocupe 1/3 da largura do container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.projeto-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Ícone dentro do Card */
+.projeto-icon {
+  font-size: 3rem;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.projeto-icon img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-bottom: 1rem;
+}
+
+/* Título do Card */
+.projetos-titulo {
+  text-align: center; /* Alinha o título ao centro */
+  font-size: 2rem; /* Ajuste o tamanho conforme necessário */
+  font-weight: bold; /* Deixa o título mais forte, se necessário */
+  margin-bottom: 20px; /* Adiciona um espaçamento abaixo do título */
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .projeto-card {
+    width: 100%; /* Para telas menores, os cards ficam em uma coluna */
+  }
+}
+
+.projeto-card img {
+  width: 100%;
+  max-width: 300px; /* Ajuste a largura máxima conforme necessário */
+  height: auto; /* Mantém a proporção original da imagem */
+  object-fit: cover; /* Isso ajuda a garantir que as imagens se ajustem ao tamanho do container */
+}
+
+/* Ajustando imagens dos projetos */
+.projeto-img {
+  max-width: 100%; /* Garante que a imagem não ultrapasse o card */
+  height: auto;    /* Mantém a proporção da imagem */
+  border-radius: 8px; /* (Opcional) Para cantos arredondados */
+  object-fit: cover; /* Garante um bom ajuste visual */
+}
+
+.projeto-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 30%; /* Certifique-se de que o card acomoda a imagem adequadamente */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.projeto-info {
+  text-align: center;
+}
+
+.projeto-card:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .projeto-card {
+    width: 100%; /* Cards em uma única coluna */
+  }
+}
+
+/*Seção Contato*/
+/* Centralizar a seção inteira do Contato */
+.contato-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px; /* Ajuste para o espaçamento */
+}
+
+/* Centralizar o título e a descrição */
+.contato-header {
+  margin-bottom: 30px;
+}
+
+.contato-titulo {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contato-descricao {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+/* Centralizar o formulário */
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px; /* Limita a largura para não ficar muito largo */
+  margin-bottom: 20px;
+}
+
+/* Estilo para os campos do formulário */
+.form-field {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-field label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.submit-btn {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #333;
+}
+
+/* Centralizar as informações de contato abaixo do formulário */
+.contato-info {
+  margin-top: 30px;
+  font-size: 1rem;
+}
+
+
+
+
+/*Footer*/
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
